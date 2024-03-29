@@ -15,6 +15,9 @@ def evaluate(rule, data: dict) -> bool:
     if operator == "above":
         if v > value:
             return True
+    if operator == "equals":
+        if v == value:
+            return True
     return False
 
 
