@@ -1,0 +1,230 @@
+#+PROPERTY: header-args:mermaid :prologue "exec 2>&1" :epilogue ":" :pupeteer-config-file ~/.puppeteerrc
+#+PROPERTY: header-args:shell :prologue "exec 2>&1" :epilogue ":" :results code :async
+* Cytora Tech Interview:
+Rules Engine Tech Interview.
+
+** Problem:
+
+#+BEGIN_EXAMPLE markdown
+  # Cytora - python take home test
+  ## Context
+
+  Cytora provides software to insurers to help them manage, classify,
+  and route risks (insurance opportunities). Part of that involves
+  making decisions like:
+
+  - Which office or group should handle this risk
+  - What products are appropriate for this risk
+  - Whether the risk can be reasonably/profitably insured
+
+  One of the main mechanisms we use to do this is a rules engine that operates on
+  both submitted and inferred data to apply boolean flags (segment tags) to each risk submission.
+
+  ## Problem
+
+  Your task will be to implement a simplified rules engine.
+
+  ### Final State
+
+  We want to be able to express rules like this:
+
+  ```
+  Either:
+    credit_rating is above 50
+    AND
+    flood_risk is below 10
+  OR
+    revenue is above 1000000
+  ```
+
+  ### Requirements
+
+  These rules need to be configurable and variable in several ways:
+  - The number of comparisons
+  - The variables referenced (e.g. replacing `credit_rating` with something else)
+  - The constant values being compared against
+  - The operators being used (e.g. greater than, less than, equals)
+  - The structure of the boolean composition (i.e where AND/OR/etc are, and where the parentheses are)
+
+  ### Implementation
+
+  We need to be able to apply them to input that looks like this:
+
+  ```python
+  EXAMPLE_1 = {
+      "credit_rating": 75,
+      "flood_risk": 5,
+      "revenue": 1000
+  }
+  ```
+
+  In this case, you would produce an output like:
+
+  ```python
+  True
+  ```
+
+  You need to come up with an appropriate configurable representation
+  for rules like the ones above, express that specific ruleset in your
+  representation, and write a program to apply these rules to various
+  test inputs.
+
+  Important: It is up to you how to represent the rules but you DO NOT
+  need to implement any code to turn "text" into such representation!
+
+  The whole solution might look like:
+
+  ```python
+
+  EXAMPLE_1 = {...}
+
+  RULE = ...
+
+  def evaluate(rule, data):
+    ...
+
+  print(evaluate(RULE, EXAMPLE_1))
+
+  ```
+
+  ## Notes
+  - Use python3
+  - If you decided to use any dependencies that are not part of the standard library, please explain why.
+  - If you make any assumptions, call them out explicitly
+#+END_EXAMPLE
+
+** Usage:
+
+- Run up the server:
+  #+NAME: server_setup
+  #+BEGIN_SRC shell
+    make dev-setup
+    make run-dev
+  #+END_SRC
+
+  #+RESULTS: server_setup
+  #+begin_src shell
+  rm -rf .venv || true
+  python -m venv .venv
+  Processing /Users/craig/github_repos/cytora_tech_interview
+    Installing build dependencies: started
+    Installing build dependencies: finished with status 'done'
+    Getting requirements to build wheel: started
+    Getting requirements to build wheel: finished with status 'done'
+    Installing backend dependencies: started
+    Installing backend dependencies: finished with status 'done'
+    Preparing metadata (pyproject.toml): started
+    Preparing metadata (pyproject.toml): finished with status 'done'
+  Collecting build>=1.0.3 (from rules_engine==0.1.dev0+d20240329)
+    Using cached build-1.2.1-py3-none-any.whl.metadata (4.3 kB)
+  Collecting packaging>=19.1 (from build>=1.0.3->rules_engine==0.1.dev0+d20240329)
+    Using cached packaging-24.0-py3-none-any.whl.metadata (3.2 kB)
+  Collecting pyproject_hooks (from build>=1.0.3->rules_engine==0.1.dev0+d20240329)
+    Using cached pyproject_hooks-1.0.0-py3-none-any.whl.metadata (1.3 kB)
+  Using cached build-1.2.1-py3-none-any.whl (21 kB)
+  Using cached packaging-24.0-py3-none-any.whl (53 kB)
+  Using cached pyproject_hooks-1.0.0-py3-none-any.whl (9.3 kB)
+  Building wheels for collected packages: rules_engine
+    Building wheel for rules_engine (pyproject.toml): started
+    Building wheel for rules_engine (pyproject.toml): finished with status 'done'
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=2ee069f70770a679906949d2d1d439f131060de80fae9bc8fc535fcc3e4ef66a
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-o8xv7txz/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+  Successfully built rules_engine
+  Installing collected packages: rules_engine, pyproject_hooks, packaging, build
+  Successfully installed build-1.2.1 packaging-24.0 pyproject_hooks-1.0.0 rules_engine-0.1.dev0+d20240329
+  Processing /Users/craig/github_repos/cytora_tech_interview
+    Installing build dependencies: started
+    Installing build dependencies: finished with status 'done'
+    Getting requirements to build wheel: started
+    Getting requirements to build wheel: finished with status 'done'
+    Installing backend dependencies: started
+    Installing backend dependencies: finished with status 'done'
+    Preparing metadata (pyproject.toml): started
+    Preparing metadata (pyproject.toml): finished with status 'done'
+  Collecting ruff>=v0.1.11 (from rules_engine==0.1.dev0+d20240329)
+    Using cached ruff-0.3.4-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl.metadata (23 kB)
+  Using cached ruff-0.3.4-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl (16.5 MB)
+  Building wheels for collected packages: rules_engine
+    Building wheel for rules_engine (pyproject.toml): started
+    Building wheel for rules_engine (pyproject.toml): finished with status 'done'
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=47665b0166d5bd9d0e6219a74940191366686d439d2c219cb1d490f80fce8dde
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-6xvzgq9g/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+  Successfully built rules_engine
+  Installing collected packages: rules_engine, ruff
+    Attempting uninstall: rules_engine
+      Found existing installation: rules_engine 0.1.dev0+d20240329
+      Uninstalling rules_engine-0.1.dev0+d20240329:
+        Successfully uninstalled rules_engine-0.1.dev0+d20240329
+  Successfully installed ruff-0.3.4 rules_engine-0.1.dev0+d20240329
+  Processing /Users/craig/github_repos/cytora_tech_interview
+    Installing build dependencies: started
+    Installing build dependencies: finished with status 'done'
+    Getting requirements to build wheel: started
+    Getting requirements to build wheel: finished with status 'done'
+    Installing backend dependencies: started
+    Installing backend dependencies: finished with status 'done'
+    Preparing metadata (pyproject.toml): started
+    Preparing metadata (pyproject.toml): finished with status 'done'
+  Collecting pytest>=7.4.4 (from rules_engine==0.1.dev0+d20240329)
+    Using cached pytest-8.1.1-py3-none-any.whl.metadata (7.6 kB)
+  Collecting pytest-cov>=4.1.0 (from rules_engine==0.1.dev0+d20240329)
+    Using cached pytest_cov-5.0.0-py3-none-any.whl.metadata (27 kB)
+  Collecting pytest-html>=4.1.1 (from rules_engine==0.1.dev0+d20240329)
+    Using cached pytest_html-4.1.1-py3-none-any.whl.metadata (3.9 kB)
+  Collecting iniconfig (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329)
+    Using cached iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+  Requirement already satisfied: packaging in ./.venv/lib/python3.12/site-packages (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329) (24.0)
+  Collecting pluggy<2.0,>=1.4 (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329)
+    Using cached pluggy-1.4.0-py3-none-any.whl.metadata (4.3 kB)
+  Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov>=4.1.0->rules_engine==0.1.dev0+d20240329)
+    Using cached coverage-7.4.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (8.2 kB)
+  Collecting jinja2>=3.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+    Using cached Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
+  Collecting pytest-metadata>=2.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+    Using cached pytest_metadata-3.1.1-py3-none-any.whl.metadata (8.6 kB)
+  Collecting MarkupSafe>=2.0 (from jinja2>=3.0.0->pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+    Using cached MarkupSafe-2.1.5-cp312-cp312-macosx_10_9_universal2.whl.metadata (3.0 kB)
+  Using cached pytest-8.1.1-py3-none-any.whl (337 kB)
+  Using cached pytest_cov-5.0.0-py3-none-any.whl (21 kB)
+  Using cached pytest_html-4.1.1-py3-none-any.whl (23 kB)
+  Using cached coverage-7.4.4-cp312-cp312-macosx_11_0_arm64.whl (206 kB)
+  Using cached Jinja2-3.1.3-py3-none-any.whl (133 kB)
+  Using cached pluggy-1.4.0-py3-none-any.whl (20 kB)
+  Using cached pytest_metadata-3.1.1-py3-none-any.whl (11 kB)
+  Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+  Using cached MarkupSafe-2.1.5-cp312-cp312-macosx_10_9_universal2.whl (18 kB)
+  Building wheels for collected packages: rules_engine
+    Building wheel for rules_engine (pyproject.toml): started
+    Building wheel for rules_engine (pyproject.toml): finished with status 'done'
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=4a2d679542ac03760ad80da54f172f61b21225ea647abf033fae319b218ce6c9
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-l4byg0nt/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+  Successfully built rules_engine
+  Installing collected packages: rules_engine, pluggy, MarkupSafe, iniconfig, coverage, pytest, jinja2, pytest-metadata, pytest-cov, pytest-html
+    Attempting uninstall: rules_engine
+      Found existing installation: rules_engine 0.1.dev0+d20240329
+      Uninstalling rules_engine-0.1.dev0+d20240329:
+        Successfully uninstalled rules_engine-0.1.dev0+d20240329
+  Successfully installed MarkupSafe-2.1.5 coverage-7.4.4 iniconfig-2.0.0 jinja2-3.1.3 pluggy-1.4.0 pytest-8.1.1 pytest-cov-5.0.0 pytest-html-4.1.1 pytest-metadata-3.1.1 rules_engine-0.1.dev0+d20240329
+  Processing /Users/craig/github_repos/cytora_tech_interview
+    Installing build dependencies: started
+    Installing build dependencies: finished with status 'done'
+    Getting requirements to build wheel: started
+    Getting requirements to build wheel: finished with status 'done'
+    Installing backend dependencies: started
+    Installing backend dependencies: finished with status 'done'
+    Preparing metadata (pyproject.toml): started
+    Preparing metadata (pyproject.toml): finished with status 'done'
+  Building wheels for collected packages: rules_engine
+    Building wheel for rules_engine (pyproject.toml): started
+    Building wheel for rules_engine (pyproject.toml): finished with status 'done'
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=8f4d74c4c606aec3d35dfc55a0c10a8eb85b79f05202b4b148bdb7dacda6d316
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-bd6chhny/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+  Successfully built rules_engine
+  Installing collected packages: rules_engine
+    Attempting uninstall: rules_engine
+      Found existing installation: rules_engine 0.1.dev0+d20240329
+      Uninstalling rules_engine-0.1.dev0+d20240329:
+        Successfully uninstalled rules_engine-0.1.dev0+d20240329
+  Successfully installed rules_engine-0.1.dev0+d20240329
+  hello world
+  #+end_src
