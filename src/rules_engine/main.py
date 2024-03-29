@@ -9,6 +9,9 @@ def evaluate(rule, data: dict) -> bool:
     v = data.get(obj, None)
     if v is None:
         return False
+    if operator == "below":
+        if v < value:
+            return True
     if operator == "above":
         if v > value:
             return True
