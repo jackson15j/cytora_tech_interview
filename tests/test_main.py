@@ -21,6 +21,7 @@ class TestMain:
         (
             (("credit_rating", "above", 50), EXAMPLE_1, True),
             (("flood_risk", "below", 10), EXAMPLE_1, True),
+            (("flood_risk", "equals", 5), EXAMPLE_1, True),
         )
     )
     def test_evaluate1(self, rule, data, exp):
