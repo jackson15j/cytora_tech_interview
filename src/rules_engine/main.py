@@ -53,6 +53,15 @@ class And:
         return all(x.execute() for x in self.rules)
 
 
+@dataclass
+class Or:
+    """Or together the results of all executed rules."""
+    rules: list[Rule]
+
+    def execute(self):
+        return any(x.execute() for x in self.rules)
+
+
 def main():
     print("hello world")
 
