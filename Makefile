@@ -38,7 +38,7 @@ install-test-deps:
 dev-setup: create-venv install-build-deps install-lint-deps install-test-deps
 	@( \
 		. .venv/bin/activate; \
-		pip install .; \
+		pip install --editable .; \
 	)
 
 lint:

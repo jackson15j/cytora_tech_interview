@@ -115,11 +115,11 @@ Rules Engine Tech Interview.
     Installing backend dependencies: finished with status 'done'
     Preparing metadata (pyproject.toml): started
     Preparing metadata (pyproject.toml): finished with status 'done'
-  Collecting build>=1.0.3 (from rules_engine==0.1.dev0+d20240329)
+  Collecting build>=1.0.3 (from rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached build-1.2.1-py3-none-any.whl.metadata (4.3 kB)
-  Collecting packaging>=19.1 (from build>=1.0.3->rules_engine==0.1.dev0+d20240329)
+  Collecting packaging>=19.1 (from build>=1.0.3->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached packaging-24.0-py3-none-any.whl.metadata (3.2 kB)
-  Collecting pyproject_hooks (from build>=1.0.3->rules_engine==0.1.dev0+d20240329)
+  Collecting pyproject_hooks (from build>=1.0.3->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pyproject_hooks-1.0.0-py3-none-any.whl.metadata (1.3 kB)
   Using cached build-1.2.1-py3-none-any.whl (21 kB)
   Using cached packaging-24.0-py3-none-any.whl (53 kB)
@@ -127,11 +127,11 @@ Rules Engine Tech Interview.
   Building wheels for collected packages: rules_engine
     Building wheel for rules_engine (pyproject.toml): started
     Building wheel for rules_engine (pyproject.toml): finished with status 'done'
-    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=2ee069f70770a679906949d2d1d439f131060de80fae9bc8fc535fcc3e4ef66a
-    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-o8xv7txz/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev8+gf3fc5ef.d20240405-py3-none-any.whl size=26724 sha256=3379e8df2bcc2e7109865ead4c97b7b14515308b7068bb997382b9150a6fe218
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-_s5lxvit/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
   Successfully built rules_engine
   Installing collected packages: rules_engine, pyproject_hooks, packaging, build
-  Successfully installed build-1.2.1 packaging-24.0 pyproject_hooks-1.0.0 rules_engine-0.1.dev0+d20240329
+  Successfully installed build-1.2.1 packaging-24.0 pyproject_hooks-1.0.0 rules_engine-0.1.dev8+gf3fc5ef.d20240405
   Processing /Users/craig/github_repos/cytora_tech_interview
     Installing build dependencies: started
     Installing build dependencies: finished with status 'done'
@@ -141,21 +141,21 @@ Rules Engine Tech Interview.
     Installing backend dependencies: finished with status 'done'
     Preparing metadata (pyproject.toml): started
     Preparing metadata (pyproject.toml): finished with status 'done'
-  Collecting ruff>=v0.1.11 (from rules_engine==0.1.dev0+d20240329)
-    Using cached ruff-0.3.4-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl.metadata (23 kB)
-  Using cached ruff-0.3.4-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl (16.5 MB)
+  Collecting ruff>=v0.1.11 (from rules_engine==0.1.dev8+gf3fc5ef.d20240405)
+    Using cached ruff-0.3.5-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl.metadata (23 kB)
+  Using cached ruff-0.3.5-py3-none-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl (16.5 MB)
   Building wheels for collected packages: rules_engine
     Building wheel for rules_engine (pyproject.toml): started
     Building wheel for rules_engine (pyproject.toml): finished with status 'done'
-    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=47665b0166d5bd9d0e6219a74940191366686d439d2c219cb1d490f80fce8dde
-    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-6xvzgq9g/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev8+gf3fc5ef.d20240405-py3-none-any.whl size=26724 sha256=2ead07bfc21b144166a0c93bbff8fabb1e1306deda891f17d8e6054be2bb9fae
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-cta0xel6/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
   Successfully built rules_engine
   Installing collected packages: rules_engine, ruff
     Attempting uninstall: rules_engine
-      Found existing installation: rules_engine 0.1.dev0+d20240329
-      Uninstalling rules_engine-0.1.dev0+d20240329:
-        Successfully uninstalled rules_engine-0.1.dev0+d20240329
-  Successfully installed ruff-0.3.4 rules_engine-0.1.dev0+d20240329
+      Found existing installation: rules_engine 0.1.dev8+gf3fc5ef.d20240405
+      Uninstalling rules_engine-0.1.dev8+gf3fc5ef.d20240405:
+        Successfully uninstalled rules_engine-0.1.dev8+gf3fc5ef.d20240405
+  Successfully installed ruff-0.3.5 rules_engine-0.1.dev8+gf3fc5ef.d20240405
   Processing /Users/craig/github_repos/cytora_tech_interview
     Installing build dependencies: started
     Installing build dependencies: finished with status 'done'
@@ -165,24 +165,24 @@ Rules Engine Tech Interview.
     Installing backend dependencies: finished with status 'done'
     Preparing metadata (pyproject.toml): started
     Preparing metadata (pyproject.toml): finished with status 'done'
-  Collecting pytest>=7.4.4 (from rules_engine==0.1.dev0+d20240329)
+  Collecting pytest>=7.4.4 (from rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pytest-8.1.1-py3-none-any.whl.metadata (7.6 kB)
-  Collecting pytest-cov>=4.1.0 (from rules_engine==0.1.dev0+d20240329)
+  Collecting pytest-cov>=4.1.0 (from rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pytest_cov-5.0.0-py3-none-any.whl.metadata (27 kB)
-  Collecting pytest-html>=4.1.1 (from rules_engine==0.1.dev0+d20240329)
+  Collecting pytest-html>=4.1.1 (from rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pytest_html-4.1.1-py3-none-any.whl.metadata (3.9 kB)
-  Collecting iniconfig (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329)
+  Collecting iniconfig (from pytest>=7.4.4->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
-  Requirement already satisfied: packaging in ./.venv/lib/python3.12/site-packages (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329) (24.0)
-  Collecting pluggy<2.0,>=1.4 (from pytest>=7.4.4->rules_engine==0.1.dev0+d20240329)
+  Requirement already satisfied: packaging in ./.venv/lib/python3.12/site-packages (from pytest>=7.4.4->rules_engine==0.1.dev8+gf3fc5ef.d20240405) (24.0)
+  Collecting pluggy<2.0,>=1.4 (from pytest>=7.4.4->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pluggy-1.4.0-py3-none-any.whl.metadata (4.3 kB)
-  Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov>=4.1.0->rules_engine==0.1.dev0+d20240329)
+  Collecting coverage>=5.2.1 (from coverage[toml]>=5.2.1->pytest-cov>=4.1.0->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached coverage-7.4.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (8.2 kB)
-  Collecting jinja2>=3.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+  Collecting jinja2>=3.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached Jinja2-3.1.3-py3-none-any.whl.metadata (3.3 kB)
-  Collecting pytest-metadata>=2.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+  Collecting pytest-metadata>=2.0.0 (from pytest-html>=4.1.1->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached pytest_metadata-3.1.1-py3-none-any.whl.metadata (8.6 kB)
-  Collecting MarkupSafe>=2.0 (from jinja2>=3.0.0->pytest-html>=4.1.1->rules_engine==0.1.dev0+d20240329)
+  Collecting MarkupSafe>=2.0 (from jinja2>=3.0.0->pytest-html>=4.1.1->rules_engine==0.1.dev8+gf3fc5ef.d20240405)
     Using cached MarkupSafe-2.1.5-cp312-cp312-macosx_10_9_universal2.whl.metadata (3.0 kB)
   Using cached pytest-8.1.1-py3-none-any.whl (337 kB)
   Using cached pytest_cov-5.0.0-py3-none-any.whl (21 kB)
@@ -196,35 +196,79 @@ Rules Engine Tech Interview.
   Building wheels for collected packages: rules_engine
     Building wheel for rules_engine (pyproject.toml): started
     Building wheel for rules_engine (pyproject.toml): finished with status 'done'
-    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=4a2d679542ac03760ad80da54f172f61b21225ea647abf033fae319b218ce6c9
-    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-l4byg0nt/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev8+gf3fc5ef.d20240405-py3-none-any.whl size=26724 sha256=bb798889447a82ebcf39549322b29eef5314d57b394893a10214b3d977be2473
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-klmmvl97/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
   Successfully built rules_engine
   Installing collected packages: rules_engine, pluggy, MarkupSafe, iniconfig, coverage, pytest, jinja2, pytest-metadata, pytest-cov, pytest-html
     Attempting uninstall: rules_engine
-      Found existing installation: rules_engine 0.1.dev0+d20240329
-      Uninstalling rules_engine-0.1.dev0+d20240329:
-        Successfully uninstalled rules_engine-0.1.dev0+d20240329
-  Successfully installed MarkupSafe-2.1.5 coverage-7.4.4 iniconfig-2.0.0 jinja2-3.1.3 pluggy-1.4.0 pytest-8.1.1 pytest-cov-5.0.0 pytest-html-4.1.1 pytest-metadata-3.1.1 rules_engine-0.1.dev0+d20240329
-  Processing /Users/craig/github_repos/cytora_tech_interview
+      Found existing installation: rules_engine 0.1.dev8+gf3fc5ef.d20240405
+      Uninstalling rules_engine-0.1.dev8+gf3fc5ef.d20240405:
+        Successfully uninstalled rules_engine-0.1.dev8+gf3fc5ef.d20240405
+  Successfully installed MarkupSafe-2.1.5 coverage-7.4.4 iniconfig-2.0.0 jinja2-3.1.3 pluggy-1.4.0 pytest-8.1.1 pytest-cov-5.0.0 pytest-html-4.1.1 pytest-metadata-3.1.1 rules_engine-0.1.dev8+gf3fc5ef.d20240405
+  Obtaining file:///Users/craig/github_repos/cytora_tech_interview
     Installing build dependencies: started
     Installing build dependencies: finished with status 'done'
-    Getting requirements to build wheel: started
-    Getting requirements to build wheel: finished with status 'done'
+    Checking if build backend supports build_editable: started
+    Checking if build backend supports build_editable: finished with status 'done'
+    Getting requirements to build editable: started
+    Getting requirements to build editable: finished with status 'done'
     Installing backend dependencies: started
     Installing backend dependencies: finished with status 'done'
-    Preparing metadata (pyproject.toml): started
-    Preparing metadata (pyproject.toml): finished with status 'done'
+    Preparing editable metadata (pyproject.toml): started
+    Preparing editable metadata (pyproject.toml): finished with status 'done'
   Building wheels for collected packages: rules_engine
-    Building wheel for rules_engine (pyproject.toml): started
-    Building wheel for rules_engine (pyproject.toml): finished with status 'done'
-    Created wheel for rules_engine: filename=rules_engine-0.1.dev0+d20240329-py3-none-any.whl size=26367 sha256=8f4d74c4c606aec3d35dfc55a0c10a8eb85b79f05202b4b148bdb7dacda6d316
-    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-bd6chhny/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
+    Building editable for rules_engine (pyproject.toml): started
+    Building editable for rules_engine (pyproject.toml): finished with status 'done'
+    Created wheel for rules_engine: filename=rules_engine-0.1.dev8+gf3fc5ef.d20240405-0.editable-py3-none-any.whl size=26354 sha256=b4601a7018badfa5a6767078870bc8194be40ab606c5cb83dd92ad31b0067f35
+    Stored in directory: /private/var/folders/tl/tpmbfj7n33x27vbhqn_70y1r0000gn/T/pip-ephem-wheel-cache-__jyrfgc/wheels/68/91/2f/02f724a49323182b1dc1e491b940208e358550d76174db5adf
   Successfully built rules_engine
   Installing collected packages: rules_engine
     Attempting uninstall: rules_engine
-      Found existing installation: rules_engine 0.1.dev0+d20240329
-      Uninstalling rules_engine-0.1.dev0+d20240329:
-        Successfully uninstalled rules_engine-0.1.dev0+d20240329
-  Successfully installed rules_engine-0.1.dev0+d20240329
+      Found existing installation: rules_engine 0.1.dev8+gf3fc5ef.d20240405
+      Uninstalling rules_engine-0.1.dev8+gf3fc5ef.d20240405:
+        Successfully uninstalled rules_engine-0.1.dev8+gf3fc5ef.d20240405
+  Successfully installed rules_engine-0.1.dev8+gf3fc5ef.d20240405
   hello world
+  #+end_src
+- Run tests:
+  #+NAME: tests
+  #+BEGIN_SRC shell
+    make test
+  #+END_SRC
+
+  #+RESULTS: tests
+  #+begin_src shell
+  ============================= test session starts ==============================
+  platform darwin -- Python 3.12.2, pytest-8.1.1, pluggy-1.4.0 -- /Users/craig/github_repos/cytora_tech_interview/.venv/bin/python3.12
+  cachedir: .pytest_cache
+  metadata: {'Python': '3.12.2', 'Platform': 'macOS-14.2-arm64-arm-64bit', 'Packages': {'pytest': '8.1.1', 'pluggy': '1.4.0'}, 'Plugins': {'cov': '5.0.0', 'html': '4.1.1', 'metadata': '3.1.1'}}
+  rootdir: /Users/craig/github_repos/cytora_tech_interview
+  configfile: pyproject.toml
+  plugins: cov-5.0.0, html-4.1.1, metadata-3.1.1
+  collecting ... collected 7 items
+
+  tests/test_main.py::TestMain::test_evaluate SKIPPED (TODO)               [ 14%]
+  tests/test_main.py::TestMain::test_evaluate1[rule0-data0-True] PASSED    [ 28%]
+  tests/test_main.py::TestMain::test_evaluate1[rule1-data1-False] PASSED   [ 42%]
+  tests/test_main.py::TestMain::test_evaluate1[rule2-data2-True] PASSED    [ 57%]
+  tests/test_main.py::TestMain::test_evaluate1[rule3-data3-False] PASSED   [ 71%]
+  tests/test_main.py::TestMain::test_evaluate1[rule4-data4-True] PASSED    [ 85%]
+  tests/test_main.py::TestMain::test_evaluate1[rule5-data5-False] PASSED   [100%]
+
+  - generated xml file: /Users/craig/github_repos/cytora_tech_interview/build/test-reports/py_unittests.xml -
+  ============================= slowest 10 durations =============================
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule0-data0-True]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule1-data1-False]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule5-data5-False]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule4-data4-True]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule2-data2-True]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate1[rule3-data3-False]
+  0.00s setup    tests/test_main.py::TestMain::test_evaluate
+  0.00s teardown tests/test_main.py::TestMain::test_evaluate
+  0.00s call     tests/test_main.py::TestMain::test_evaluate1[rule0-data0-True]
+  0.00s teardown tests/test_main.py::TestMain::test_evaluate1[rule0-data0-True]
+  - Generated html report: file:///Users/craig/github_repos/cytora_tech_interview/build/test-reports/py_unittests.html -
+  =========================== short test summary info ============================
+  SKIPPED [1] tests/test_main.py:16: TODO
+  ========================= 6 passed, 1 skipped in 0.03s =========================
   #+end_src
