@@ -33,11 +33,9 @@ def evaluate(rule, data: dict) -> bool:
     return False
 
 
-
-
 @dataclass
 class Rule:
-    """"""
+    """Comparison rule instance."""
     a: int
     b: int
     operator: Operator
@@ -45,6 +43,14 @@ class Rule:
     def execute(self):
         return self.operator.value(self.a, self.b)
 
+
+@dataclass
+class And:
+    """And together the results of all executed rules."""
+    rules: list[Rule]
+
+    def execute(self):
+        return all(x.execute() for x in self.rules)
 
 
 def main():

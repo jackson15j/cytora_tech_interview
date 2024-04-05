@@ -1,6 +1,7 @@
 """TODO"""
 from src.rules_engine.main import (
     evaluate,
+    And,
     Operator,
     Rule,
 )
@@ -54,3 +55,16 @@ class TestMain:
     )
     def test_rule(self, a, b, operator, exp):
         assert Rule(a, b, operator).execute() == exp
+
+    @pytest.mark.parametrize(
+        "msg,rules,exp",
+        (
+            ("All rules return True", (Rule(5, 10, Operator.less_than), Rule(10, 5, Operator.greater_than)), True),
+            ("First Rule returns False", (Rule(10, 5, Operator.less_than), Rule(10, 5, Operator.greater_than)), False),
+            ("Second Rule returns False", (Rule(5, 10, Operator.less_than), Rule(5, 10, Operator.greater_than)), False),
+            ("All rules return False", (Rule(10, 5, Operator.less_than), Rule(5, 10, Operator.greater_than)), False),
+        )
+    )
+    def test_and(self, msg, rules, exp):
+        print(f"Debug: {msg!r}")
+        assert And(rules).execute() == exp
