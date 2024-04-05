@@ -1,4 +1,16 @@
 """ TODO: Cytora Main docstring."""
+import operator
+from dataclasses import dataclass
+from enum import Enum
+
+
+class Operator(Enum):
+    less_than = operator.lt
+    less_than_equal = operator.le
+    greater_than = operator.gt
+    greater_than_equal = operator.ge
+    equal = operator.eq
+    not_equal = operator.ne
 
 
 def evaluate(rule, data: dict) -> bool:
@@ -19,6 +31,20 @@ def evaluate(rule, data: dict) -> bool:
         if v == value:
             return True
     return False
+
+
+
+
+@dataclass
+class Rule:
+    """"""
+    a: int
+    b: int
+    operator: Operator
+
+    def execute(self):
+        return self.operator.value(self.a, self.b)
+
 
 
 def main():

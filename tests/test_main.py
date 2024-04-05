@@ -1,5 +1,9 @@
 """TODO"""
-from src.rules_engine.main import evaluate
+from src.rules_engine.main import (
+    evaluate,
+    Operator,
+    Rule,
+)
 import pytest
 
 
@@ -34,3 +38,19 @@ class TestMain:
     )
     def test_evaluate1(self, rule, data, exp):
         assert evaluate(rule, data) == exp
+
+    @pytest.mark.parametrize(
+        "a,b,operator,exp",
+        (
+            (5, 10, Operator.less_than, True),
+            (5, 10, Operator.less_than_equal, True),
+            (5, 5, Operator.less_than_equal, True),
+            (10, 5, Operator.greater_than, True),
+            (10, 5, Operator.greater_than_equal, True),
+            (10, 10, Operator.greater_than_equal, True),
+            (10, 10, Operator.equal, True),
+            (10, 5, Operator.not_equal, True),
+        )
+    )
+    def test_rule(self, a, b, operator, exp):
+        assert Rule(a, b, operator).execute() == exp
