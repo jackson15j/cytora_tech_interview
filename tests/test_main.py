@@ -82,3 +82,12 @@ class TestMain:
     def test_or(self, msg, rules, exp):
         print(f"Debug: {msg!r}")
         assert Or(rules).execute() == exp
+
+    def test_combined_and_or_rules(self):
+        combined_rule = Or(
+            (
+                And((Rule(1, 1, Operator.equal),)),  # True
+                And((Rule(2, 2, Operator.not_equal),)),  # False
+            )
+        )  # True
+        assert combined_rule.execute() is True
