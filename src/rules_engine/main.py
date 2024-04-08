@@ -40,7 +40,7 @@ class Rule:
     b: int
     operator: Operator
 
-    def execute(self):
+    def execute(self) -> bool:
         return self.operator.value(self.a, self.b)
 
 
@@ -49,7 +49,7 @@ class And:
     """And together the results of all executed rules."""
     rules: list[Rule]
 
-    def execute(self):
+    def execute(self) -> bool:
         return all(x.execute() for x in self.rules)
 
 
@@ -58,7 +58,7 @@ class Or:
     """Or together the results of all executed rules."""
     rules: list[Rule]
 
-    def execute(self):
+    def execute(self) -> bool:
         return any(x.execute() for x in self.rules)
 
 
