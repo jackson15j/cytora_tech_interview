@@ -13,26 +13,6 @@ class Operator(Enum):
     not_equal = operator.ne
 
 
-def evaluate(rule, data: dict) -> bool:
-    # TODO: Handle multiple rules.
-    # TODO: Handle AND.
-    # TODO: Handle other operators.
-    obj, operator, value = rule
-    v = data.get(obj, None)
-    if v is None:
-        return False
-    if operator == "below":
-        if v < value:
-            return True
-    if operator == "above":
-        if v > value:
-            return True
-    if operator == "equals":
-        if v == value:
-            return True
-    return False
-
-
 @dataclass
 class Rule:
     """Comparison rule instance."""
@@ -40,26 +20,34 @@ class Rule:
     b: int
     operator: Operator
 
-    def execute(self) -> bool:
+    def execute(self, data: dict = {}) -> bool:
+        if data:
+            # Assuming `self.a` is the dict Key instead of the value,
+            # which I was initially using in early testing.
+            self.a = data[self.a]
         return self.operator.value(self.a, self.b)
 
 
 @dataclass
 class And:
     """And together the results of all executed rules."""
-    rules: list[Rule]
+    rules: list  # list['And'|'Or'|Rule]|tuple['And'|'Or'|Rule]
 
-    def execute(self) -> bool:
-        return all(x.execute() for x in self.rules)
+    def execute(self, data: dict = {}) -> bool:
+        return all(x.execute(data) for x in self.rules)
 
 
 @dataclass
 class Or:
     """Or together the results of all executed rules."""
-    rules: list[Rule]
+    rules: list  # list[And|'Or'|Rule]|tuple[And|'Or'|Rule]
 
-    def execute(self) -> bool:
-        return any(x.execute() for x in self.rules)
+    def execute(self, data: dict = {}) -> bool:
+        return any(x.execute(data) for x in self.rules)
+
+
+def evaluate(rules, data: dict = {}) -> bool:
+    return rules.execute(data)
 
 
 def main():
