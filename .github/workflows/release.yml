@@ -23,7 +23,7 @@ jobs:
           python-version: "3.12"
 
       - name: Create .venv
-        run: make create-dev-venv
+        run: make create-venv
       - name: Deps - Install build dependencies
         run: make install-build-deps
       - name: Build - Python Package
