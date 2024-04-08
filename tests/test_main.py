@@ -38,20 +38,16 @@ class TestMain:
     def test_evaluate(self):
         assert evaluate(RULE_1, EXAMPLE_1) == EXAMPLE_1_EXP
 
-    @pytest.mark.skip("TODO: Broken?")
     @pytest.mark.parametrize(
         "rule,data,exp",
         (
             # Single rules.
-            (("credit_rating", "above", 50), EXAMPLE_1, True),
-            (("credit_rating", "below", 50), EXAMPLE_1, False),
-            (("flood_risk", "below", 10), EXAMPLE_1, True),
-            (("flood_risk", "above", 10), EXAMPLE_1, False),
-            (("flood_risk", "equals", 5), EXAMPLE_1, True),
-            (("flood_risk", "equals", 10), EXAMPLE_1, False),
-            # multiple rules.
-            # TODO: Add Red test
-            # ([("credit_rating", "above", 50), ("flood_risk", "below", 10)], EXAMPLE_1, True),
+            (Rule("credit_rating", 50, Operator.greater_than), EXAMPLE_1, True),
+            (Rule("credit_rating", 50, Operator.less_than), EXAMPLE_1, False),
+            (Rule("flood_risk", 10, Operator.less_than), EXAMPLE_1, True),
+            (Rule("flood_risk", 10, Operator.greater_than), EXAMPLE_1, False),
+            (Rule("flood_risk", 5, Operator.equal), EXAMPLE_1, True),
+            (Rule("flood_risk", 10, Operator.equal), EXAMPLE_1, False),
         )
     )
     def test_evaluate1(self, rule, data, exp):
