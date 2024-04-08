@@ -298,3 +298,38 @@ Rules Engine Tech Interview.
   - Generated html report: file:///Users/craig/github_repos/cytora_tech_interview/build/test-reports/py_unittests.html -
   ============================== 24 passed in 0.06s ==============================
   #+end_src
+
+** Retrospective:
+
+*** Good:
+
+- Rules can be nested and only need one `evaluate()` call to fire off
+  the chain of execution.
+- Red/Green/Refactor TDD = de-risked development/refactoring.
+
+*** Bad:
+
+- Not the prettiest of representations, especially if there was a
+  follow on task to convert from the above text format to my
+  representation.
+  - Personally, if I had the opportunity, I would provide alternative
+    text options for defining rules to make it easier to pragmatically
+    parse (eg. moving `And`/`Or` onto first line of their respective
+    grouping and indenting (or adding delimiters) the group.
+
+*** Ugly:
+
+- Despite reading:
+  #+BEGIN_QUOTE
+    ...you DO NOT need to implement any code to turn "text" into such
+    representation!
+  #+END_QUOTE
+  I still got into my head at how to parse text to rules from reading
+  the earlier requirement of:
+  #+BEGIN_QUOTE
+    You need to come up with an appropriate configurable
+    representation for rules like the ones above, express that
+    specific ruleset in your representation, and write a program to
+    apply these rules to various test inputs.
+  #+END_QUOTE
+  I wasted a bit of time on this one before dropping.
