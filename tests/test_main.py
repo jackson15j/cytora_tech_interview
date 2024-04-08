@@ -8,8 +8,24 @@ from src.rules_engine.main import (
 )
 import pytest
 
+# Either:
+#   credit_rating is above 50
+#   AND
+#   flood_risk is below 10
+# OR
+#   revenue is above 1000000
+RULE_1 = Or(
+    (
+        And(
+            (
+                Rule("credit_rating", 50, Operator.greater_than),  # True
+                Rule("flood_risk", 10, Operator.less_than),  # True
+            )
+        ),  # True
+        Rule("revenue", 1000000, Operator.greater_than),  # False
+    )
+)  # True
 
-RULE_1 = ("TODO","TODO","TODO")
 EXAMPLE_1 = {
     "credit_rating": 75,
     "flood_risk": 5,
@@ -19,7 +35,6 @@ EXAMPLE_1_EXP = True
 
 
 class TestMain:
-    @pytest.mark.skip("TODO")
     def test_evaluate(self):
         assert evaluate(RULE_1, EXAMPLE_1) == EXAMPLE_1_EXP
 
